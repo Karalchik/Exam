@@ -74,7 +74,7 @@
             visibility: hidden;
         }
         .game_o{
-            
+
             text-align: center;
             font-size: 150px;
             position: absolute;
@@ -83,6 +83,9 @@
             color: green;
         }
     </style>
+    <script src="Game.js"></script>
+    <script src="GameBoard.js"></script>
+    <script src="Figure.js"></script>
 </head>
 <body>
     <header>
@@ -90,12 +93,12 @@
     <div class="desk">
     <div class="score">Level : <span id="for_level">0</span></div>
     <div class="score">Score : <span id="for_score">0</span></div>
-    <button id="pause_play" onclick="pauseGame()">Pause</button>
-    <button id="start_game" onclick="startGame()">Start</button>
+    <button id="pause_play" >Pause</button>
+    <button id="start_game" >Start</button>
     <div class="for_tetr"></div>
     </div>
     <div class="main"></div>
     <div class="game_o" id="game_over">Game Over</div>
-    <script src="index.js"></script>
+    <script src="index_classes.js"></script>
 </body>
 </html>

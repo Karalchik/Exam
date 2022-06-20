@@ -4,6 +4,7 @@ let level=1;
 let isPause=false;
 let isStarted=false;
 let sTime;
+
 let Levels={
     1:{
         scorePerLine:60,
@@ -101,7 +102,7 @@ var playfield=[
 ];
 
 
-
+//убрать за ней следы 1 ++
 function removePrevActive(){
     for(let i=0;i<playfield.length;i++){
         for(let j=0;j<playfield[i].length;j++){
@@ -111,7 +112,7 @@ function removePrevActive(){
         } 
     }   
 }
-
+//на пробел 2 ++
 function dropTetr(){
     for(let i=first_fugo.y;i<playfield.length;i++){
         first_fugo.y+=1;
@@ -121,7 +122,7 @@ function dropTetr(){
         }
     }
 }
-
+//тетресинка за полем 1 ++
 function makeNext(){
     let nextTetrH=''
     for(let i=0;i<second_fugo.shape.length;i++){
@@ -137,7 +138,7 @@ function makeNext(){
     }
     tetr_e.innerHTML=nextTetrH;
 }
-
+//отрисовать тетресинку 1 ++
 function updateActive(){
     removePrevActive();
     for(let i=0;i<first_fugo.shape.length;i++){
@@ -148,7 +149,7 @@ function updateActive(){
         } 
     }
 }
-
+//сделать поле для тетриса 1 ++
 function makeABoard(){
 let mainInnerHTML='';
 for(let i=0;i<playfield.length;i++){
@@ -166,7 +167,7 @@ for(let i=0;i<playfield.length;i++){
 }
 main.innerHTML=mainInnerHTML;
 }
-
+//повернуть тетресинку 2 ++
 function rotateTetr(){
     const prevTetrState = first_fugo.shape;
     first_fugo.shape=first_fugo.shape[0].map((val,index)=>
@@ -176,7 +177,7 @@ function rotateTetr(){
     first_fugo.shape=prevTetrState;
     }
 }
-
+//остановка по кнопке 1 ++
 function pauseGame(){
     if(isPause==true){
         document.querySelector('#pause_play').innerHTML='Pause';
@@ -190,7 +191,7 @@ function pauseGame(){
     }
     sTime = setTimeout(startGame,Levels[level].speed);
 }
-
+//гейм овер 1 ++
 function reset(){
     level=1;
     score=0;
@@ -224,7 +225,7 @@ function reset(){
     makeABoard();
     document.querySelector('#game_over').style='visibility:visible;';
 }
-
+//движение в низ на одну строчку 2 ++
 function moveTetrDown(){
     if(isPause!=true){
     first_fugo.y+=1;
@@ -241,7 +242,7 @@ function moveTetrDown(){
     }
     }
 }
-
+//создать новую терисинку 2 ++
 function getNewTetr(){
     const a='IOLJTSZ';
     const rand = Math.floor(Math.random()*7);
@@ -251,7 +252,7 @@ function getNewTetr(){
             shape:newTetr
         };
 }
-
+//есть ли соприкасновения с 2 или выходы за масив 2 ++
 function hasBordAct(){
     for(let i=0;i<first_fugo.shape.length;i++){
         for(let j=0;j<first_fugo.shape[i].length;j++){
@@ -268,7 +269,7 @@ function hasBordAct(){
     }  
     return false;
 }
-
+//убрать все заполненые ряды 1 ++
 function remAllCInL(){
     let canDell=true;
     let countDell=0;
@@ -312,7 +313,7 @@ function remAllCInL(){
     score_e.innerHTML=score;
     countDell=0;
 }
-
+//фиксация 1 ++
 function fixTetr(){
     for(let i=0;i<playfield.length;i++){
         for(let j=0;j<playfield[i].length;j++){
@@ -358,7 +359,8 @@ level_e.innerHTML=level;
 score_e.innerHTML=score;
 updateActive();
 makeABoard();
-makeNext();
+makeNext(); 
+//++
 function startGame(){
     isStarted=true;
     if(!isPause){
