@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            margin: 0;
+            background-color: darkgrey;
+        }
+        button{
+            border:10px double white;
+            border-radius: 10%;
+            text-align: center;
+        }
+        #start_game{
+            position: absolute;
+            margin-left: 185px;
+            margin-top: 50px;
+        }
+        #pause_play{
+            position: absolute;
+            margin-left: 185px;
+            margin-top: 100px;
+        }
+        .main{
+            height: 630px;
+            width: 330px;
+            margin: 0px auto 0;
+            border: 15px double white;
+            font-size: 0;
+            float: left;
+        }
+        .desk{
+            height: 630px;
+            width: 330px;
+            margin: 0px auto 0;
+            border: 15px double white;
+            font-size: 0;
+            float: left;
+        }
+        .cell{
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            border:1px solid rebeccapurple;
+        }
+        .cell_move{
+            background-color: red ;
+        }
+        .cell_stop{
+            background-color: darkred;
+        }
+        .score{
+            color: aquamarine;
+            text-align: center;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 40px;
+            width: 300px;
+        }
+        .for_tetr{
+            position: absolute;
+            margin-top: 50px;
+            margin-left: 30px;
+            font-size: 0;
+            border:15px double white;
+        }
+        #game_over{
+            visibility: hidden;
+        }
+        .game_o{
+            
+            text-align: center;
+            font-size: 150px;
+            position: absolute;
+            width: 100%;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <header>
+    </header>
+    <div class="desk">
+    <div class="score">Level : <span id="for_level">0</span></div>
+    <div class="score">Score : <span id="for_score">0</span></div>
+    <button id="pause_play" onclick="pauseGame()">Pause</button>
+    <button id="start_game" onclick="startGame()">Start</button>
+    <div class="for_tetr"></div>
+    </div>
+    <div class="main"></div>
+    <div class="game_o" id="game_over">Game Over</div>
+    <script src="index.js"></script>
+</body>
+</html>
