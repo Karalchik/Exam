@@ -8,13 +8,14 @@
     <style>
         *{
             box-sizing: border-box;
+            color: rgb(59, 167, 131);
         }
         body{
             margin: 0;
             background-color: darkgrey;
         }
         button{
-            border:10px double white;
+            border:10px double rgb(63, 0, 0);
             border-radius: 10%;
             text-align: center;
         }
@@ -32,6 +33,8 @@
             height: 630px;
             width: 330px;
             margin: 0px auto 0;
+            margin-left: 30px;
+            margin-top: 25px;
             border: 15px double white;
             font-size: 0;
             float: left;
@@ -40,6 +43,8 @@
             height: 630px;
             width: 330px;
             margin: 0px auto 0;
+            margin-left: 15px;
+            margin-top: 25px;
             border: 15px double white;
             font-size: 0;
             float: left;
@@ -57,7 +62,6 @@
             background-color: darkred;
         }
         .score{
-            color: aquamarine;
             text-align: center;
             font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
             font-size: 40px;
@@ -80,7 +84,67 @@
             position: absolute;
             width: 100%;
             font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-            color: green;
+        }
+        .pravila{
+            width:290px; 
+            height: 284px;
+            border:15px double white;
+            margin-left: 5px;
+            top:340px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 11.5px;
+            position: absolute;
+            text-align: left;
+            padding: 5px;
+        }
+        .desk2{
+            height: 630px;
+            width: 630px;
+            margin-top: 0;
+            margin-left: 30px;
+            margin-top: 25px;
+            border: 15px double white;
+            font-size: 0;
+            float: left;
+            background-color: rgb(227, 201, 201);
+        }
+        .for_color{
+            font-size: large;
+            float: left;
+            margin-left: 4.4%;
+            margin-top: 3.5%;
+            text-align: center;
+            width: 90px;
+            height:90px;
+            border:1px solid rgb(197, 139, 255);
+        }
+        .to_color{
+            font-size: large;
+            float: left;
+            margin-left: 4.4%;
+            margin-top: 3.5%;
+            text-align: center;
+            width: 90px;
+            height:90px;
+            border:1px solid rgb(197, 139, 255);
+        }
+        input{
+            float: left;
+            margin-left: 4.4%;
+            margin-top: 3.5%;
+            text-align: center;
+            width: 90px;
+            height:90px;
+            border:1px solid rgb(197, 139, 255);
+        }
+        #canva{
+            float: left;
+            margin-left: 4.4%;
+            margin-top: 3.5%;
+            text-align: center;
+            width: 555px;
+            height:240px;
+            border:1px solid rgb(197, 139, 255);
         }
     </style>
     <script src="Game.js"></script>
@@ -93,12 +157,47 @@
     <div class="desk">
     <div class="score">Level : <span id="for_level">0</span></div>
     <div class="score">Score : <span id="for_score">0</span></div>
-    <button id="pause_play" >Pause</button>
+    <button id="pause_play" disabled >Pause</button>
     <button id="start_game" >Start</button>
     <div class="for_tetr"></div>
+    <div class="pravila">
+        <p>To start : Press start button </p>
+        <p>To pause : Press pause button </p>
+        <p>To keep playing : Press keep playing button </p>
+        <p>To rotate : Press up_key</p>
+        <p>To move left : Press left_key</p>
+        <p>To move right : Press right_key</p>
+        <p>To move down : Press down_key</p>
+        <p>To drop down : Press space</p>
+        <p>If you see game over ,but you want to play again : Press keep playing button</p>
+    </div>
     </div>
     <div class="main"></div>
+    <div class="desk2">
+        <div class="for_color" id="f_c1">Color For Cells</div>
+        <div class="for_color" id="f_c2">Background Color</div>
+        <div class="for_color" id="f_c3">Border Color</div>
+        <div class="for_color" id="f_c4">Text Color</div>
+        <div class="for_color" id="f_c5">Color For Cells When They Stay</div>
+
+        <div class="to_color" id="t_c1" draggable="true"></div>
+        <div class="to_color" id="t_c2" draggable="true"></div>
+        <div class="to_color" id="t_c3" draggable="true"></div>
+        <div class="to_color" id="t_c4" draggable="true"></div>
+        <div class="to_color" id="t_c5" draggable="true"></div>
+
+        <input type="color" id="inp1">
+        <input type="color" id="inp2">
+        <input type="color" id="inp3">
+        <input type="color" id="inp4">
+        <input type="color" id="inp5">
+
+        <canvas id="canva"></canvas>
+    </div>
     <div class="game_o" id="game_over">Game Over</div>
+    
+    <script src="Drag&Drop.js"></script>
+    <script src="Colors.js"></script>
     <script src="index_classes.js"></script>
 </body>
 </html>

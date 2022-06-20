@@ -35,6 +35,7 @@ class GameBoard extends ArrOfBoards {
     checkAndRemoveRows() {
         let canDell = true;
         let countDell = 0;
+        var canvas = document.getElementById('canva').getContext('2d');
         for (let i = 0; i < super.getPlayField().length; i++) {
             for (let j = 0; j < super.getPlayField()[i].length; j++) {
                 if (super.getPlayField()[i][j] !== 2) {
@@ -55,15 +56,27 @@ class GameBoard extends ArrOfBoards {
                 break;
             case 1:
                 this.objOfGame.score += this.objOfGame.getLevels()[this.objOfGame.level].scorePerLine;
+                canvas.clearRect(1, 1, 600, 300);
+                canvas.font = "38px serif";
+                canvas.strokeText("Wow,but only one", 10, 50);
                 break;
             case 2:
                 this.objOfGame.score += this.objOfGame.getLevels()[this.objOfGame.level].scorePerLine * 2;
+                canvas.clearRect(1, 1, 600, 300);
+                canvas.font = "38px serif";
+                canvas.strokeText("Very Nice,dude", 10, 50);
                 break;
             case 3:
                 this.objOfGame.score += this.objOfGame.getLevels()[this.objOfGame.level].scorePerLine * 3.5;
+                canvas.clearRect(1, 1, 600, 300);
+                canvas.font = "38px serif";
+                canvas.strokeText("O my god!It's top", 10, 50);
                 break;
             case 4:
                 this.objOfGame.score += this.objOfGame.getLevels()[this.objOfGame.level].scorePerLine * 5;
+                canvas.clearRect(1, 1, 600, 300);
+                canvas.font = "38px serif";
+                canvas.strokeText("Holy Shit,bro !", 10, 50);
                 break;
             default:
                 break;

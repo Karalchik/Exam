@@ -444,5 +444,3 @@ game.score_e.innerHTML = game.score;
 gameBoard.updateActiveFigure();
 gameBoard.drawBoard();
 figure.drawNextFigure();
-
-

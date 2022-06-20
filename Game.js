@@ -64,6 +64,7 @@ class Game extends ArrOfLevels {
             this.sTime = setTimeout(function () {
                 game.startGameLoop()
             }, super.getLevels()[this.level].speed);
+            document.querySelector('#pause_play').disabled = false;
             document.querySelector('#start_game').disabled = true;
         }
     }
