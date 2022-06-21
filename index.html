@@ -8,7 +8,6 @@
     <style>
         *{
             box-sizing: border-box;
-            color: rgb(59, 167, 131);
         }
         body{
             margin: 0;
@@ -40,6 +39,7 @@
             float: left;
         }
         .desk{
+            color: rgb(59, 167, 131);
             height: 630px;
             width: 330px;
             margin: 0px auto 0;
@@ -121,12 +121,19 @@
         .to_color{
             font-size: large;
             float: left;
-            margin-left: 4.4%;
-            margin-top: 3.5%;
+            margin-left: 0%;
+            margin-top: 0%;
             text-align: center;
             width: 90px;
             height:90px;
             border:1px solid rgb(197, 139, 255);
+        }
+        .help_to_color{
+            margin-left: 4.4%;
+            margin-top: 3.5%;
+            width: 91px;
+            height:91px;
+            float: left;
         }
         input{
             float: left;
@@ -145,6 +152,11 @@
             width: 555px;
             height:240px;
             border:1px solid rgb(197, 139, 255);
+        }
+        #otcat{
+            position: absolute;
+            left:55.85%;
+            top:87%;
         }
     </style>
     <script src="Game.js"></script>
@@ -174,17 +186,18 @@
     </div>
     <div class="main"></div>
     <div class="desk2">
-        <div class="for_color" id="f_c1">Color For Cells</div>
-        <div class="for_color" id="f_c2">Background Color</div>
-        <div class="for_color" id="f_c3">Border Color</div>
-        <div class="for_color" id="f_c4">Text Color</div>
-        <div class="for_color" id="f_c5">Color For Cells When They Stay</div>
+        Color For Cells, Background Color ,Border Color, Text Color ,Color For Cells When They Stay
+        <div class="for_color" id="f_c1"></div>
+        <div class="for_color" id="f_c2"></div>
+        <div class="for_color" id="f_c3"></div>
+        <div class="for_color" id="f_c4"></div>
+        <div class="for_color" id="f_c5"></div>
 
-        <div class="to_color" id="t_c1" draggable="true"></div>
-        <div class="to_color" id="t_c2" draggable="true"></div>
-        <div class="to_color" id="t_c3" draggable="true"></div>
-        <div class="to_color" id="t_c4" draggable="true"></div>
-        <div class="to_color" id="t_c5" draggable="true"></div>
+        <div class="help_to_color"><div class="to_color" id="t_c1" draggable="true"></div></div>
+        <div class="help_to_color"><div class="to_color" id="t_c2" draggable="true"></div></div>
+        <div class="help_to_color"><div class="to_color" id="t_c3" draggable="true"></div></div>
+        <div class="help_to_color"><div class="to_color" id="t_c4" draggable="true"></div></div>
+        <div class="help_to_color"><div class="to_color" id="t_c5" draggable="true"></div></div>
 
         <input type="color" id="inp1">
         <input type="color" id="inp2">
@@ -193,9 +206,11 @@
         <input type="color" id="inp5">
 
         <canvas id="canva"></canvas>
+        <button id="otcat" onclick="rebuild()">ReBuild</button>
     </div>
     <div class="game_o" id="game_over">Game Over</div>
     
+    <script src="AutoColor.js" defer></script>
     <script src="Drag&Drop.js"></script>
     <script src="Colors.js"></script>
     <script src="index_classes.js"></script>
