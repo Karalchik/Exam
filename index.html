@@ -155,8 +155,17 @@
         }
         #otcat{
             position: absolute;
-            left:55.85%;
-            top:87%;
+            left:50.85%;
+            top:78.85%;
+        }
+        .div_with_info{
+            position: absolute;
+            left:50.5%;
+            width: 600px;
+            height: 15px;
+            color: rgb(227, 88, 88);
+            font-size: medium;
+            top:6%;
         }
     </style>
     <script src="Game.js"></script>
@@ -186,7 +195,7 @@
     </div>
     <div class="main"></div>
     <div class="desk2">
-        Color For Cells, Background Color ,Border Color, Text Color ,Color For Cells When They Stay
+        <div class="div_with_info">Color For Desk || Background Color || Desk BackColor || Border Color || Border2 Color</div>
         <div class="for_color" id="f_c1"></div>
         <div class="for_color" id="f_c2"></div>
         <div class="for_color" id="f_c3"></div>
@@ -209,7 +218,6 @@
         <button id="otcat" onclick="rebuild()">ReBuild</button>
     </div>
     <div class="game_o" id="game_over">Game Over</div>
-    
     <script src="AutoColor.js" defer></script>
     <script src="Drag&Drop.js"></script>
     <script src="Colors.js"></script>
